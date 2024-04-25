@@ -57,6 +57,6 @@ export const getUpcomingBookings = async (
 };
 
 export const getAllServices = async (): Promise<IService[]> => {
-  const { data } = await axiosInstance.get("/services/all");
-  return data.data;
+  // const { data } = await axiosInstance.get("/services/all");
+  return [];
 };

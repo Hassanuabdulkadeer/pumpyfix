@@ -60,14 +60,14 @@ export default function Signup() {
 
     setIsLoading(true);
     try {
-      await signup({
-        ...values,
-        location: locationDetails,
-        serviceOffered: {
-          description: "This is my little description about my service",
-          serviceId: selectedServiceId,
-        },
-      });
+      // await signup({
+      //   ...values,
+      //   location: locationDetails,
+      //   serviceOffered: {
+      //     description: "This is my little description about my service",
+      //     serviceId: selectedServiceId,
+      //   },
+      // });
       Alert.alert("Success", "You have successfully signed up", [
         {
           text: "OK",
@@ -223,7 +223,7 @@ export default function Signup() {
                   </View>
 
                   <View style={styles.inputContainer}>
-                    <ServiceDropDownPicker
+                    {/* <ServiceDropDownPicker
                       {...{
                         services,
                         label: "Service",
@@ -231,7 +231,7 @@ export default function Signup() {
                         selectedServiceId: selectedServiceId,
                         setSelectedServiceId: setSelectedServiceId,
                       }}
-                    />
+                    /> */}
                   </View>
                 </View>
 
