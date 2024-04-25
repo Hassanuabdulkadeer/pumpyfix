@@ -26,6 +26,7 @@ import { useAuthToken } from "../../hooks";
 export default function Login() {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const [isRememberMeChecked, setIsRememberMeChecked] = useState(true);
+  const [isServiceProvider, setIsServiceProvider] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { storeToken } = useAuthToken();
   const { setUser, setToken } = useAppContext();
@@ -98,6 +99,17 @@ export default function Login() {
                     />
                   </View>
 
+                  <Pressable
+                    style={styles.forgotPasswordCheckBox}
+                    onPress={() => setIsServiceProvider((prev) => !prev)}
+                  >
+                    <Ionicons
+                      name={isServiceProvider ? "checkbox" : "checkbox-outline"}
+                      size={24}
+                      color={COLORS.darkBlue}
+                    />
+                    <Text style={styles.remeberMeText}>Service Provider</Text>
+                  </Pressable>
                   <View style={styles.forgotPasswordContainer}>
                     <Pressable
                       style={styles.forgotPasswordCheckBox}

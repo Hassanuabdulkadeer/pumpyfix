@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { ImageBackground, StyleSheet, View, Text } from "react-native";
 import React from "react";
 import { AppButton } from "../../components";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
@@ -10,23 +10,43 @@ export default function ChooseAuth() {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
   return (
-    <ImageBackground
-      source={require("../../assets/background.jpg")}
-      style={styles.wrapper}
+    // <ImageBackground
+    //   source={require("../../assets/background.jpg")}
+    //   style={styles.wrapper}
+    // >
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
     >
-      <View style={styles.container}>
-        <AppButton
-          title="Sign Up"
-          onPress={() => navigation.replace(ROUTES.SIGNUP)}
-        />
+      <View style={{ flex: 0.5, justifyContent: "center" }}>
+        <Text style={{ fontSize: 40, fontWeight: "700" }}>Pumpy Fix 🦺 </Text>
+      </View>
+      <View
+        style={{
+          width: "100%",
+          padding: 10,
+          alignSelf: "baseline",
+          gap: 10,
+        }}
+      >
         <AppButton
           title="Log In"
           onPress={() => navigation.replace(ROUTES.LOGIN)}
           customStyles={styles.loginButton}
-          customTextStyles={{}}
+          customTextStyles={{ color: COLORS.darkBlue }}
+        />
+        <AppButton
+          title="Sign Up"
+          onPress={() => navigation.replace(ROUTES.SIGNUP)}
         />
       </View>
-    </ImageBackground>
+    </View>
+
+    // </ImageBackground>
   );
 }
 
