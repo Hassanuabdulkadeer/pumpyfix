@@ -36,7 +36,7 @@ interface IBooking {
   _id: string;
   service: IService;
   worker: IHandyMan;
-  status: 'upcoming' | 'cancelled' | 'completed';
+  status: "upcoming" | "cancelled" | "completed";
   userId: IUser;
   createdAt: string;
 }
@@ -98,7 +98,7 @@ interface IHandyMan {
   location: {
     _id: string;
     address: string;
-    coordinates: {latitude: string; longitude: string};
+    coordinates: { latitude: string; longitude: string };
   };
   ratings: {
     count: number;

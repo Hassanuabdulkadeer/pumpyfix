@@ -3,7 +3,6 @@ import {
   GooglePlacesAutocomplete,
   GooglePlacesAutocompleteRef,
 } from "react-native-google-places-autocomplete";
-// import { GOOGLE_API_KEY } from "@env";
 import {
   Platform,
   StyleSheet,
@@ -28,7 +27,7 @@ const GooglePlacesInput: React.FC<GooglePlacesInputProps> = ({
   label,
   error,
 }) => {
-  const GOOGLE_API_KEY = "GOOGLE_API_KEY";
+  const GOOGLE_API_KEY = "AIzaSyA_nyb3moUxoJdECJW_Enysqbux2QYUyFQ";
   const mapRef = useRef<GooglePlacesAutocompleteRef>(null);
 
   return (
@@ -60,8 +59,10 @@ const GooglePlacesInput: React.FC<GooglePlacesInputProps> = ({
           // 'details' is provided when fetchDetails = true
           setLocationDetails({
             coordinates: {
-              latitude: details?.geometry.location.lat!,
-              longitude: details?.geometry.location.lng!,
+              latitude: 50.7953,
+              longitude: 1.0939,
+              // latitude: details?.geometry.location.lat!,
+              // longitude: details?.geometry.location.lng!,
             },
             address: data.description,
           });

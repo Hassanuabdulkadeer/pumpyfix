@@ -34,9 +34,13 @@ export default function Signup() {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
     null
   );
-  const [locationDetails, setLocationDetails] = useState<ILocation | null>(
-    null
-  );
+  const [locationDetails, setLocationDetails] = useState<ILocation | null>({
+    coordinates: {
+      latitude: 50.7953,
+      longitude: 1.0939,
+    },
+    address: "University of Portsmouth",
+  });
 
   useEffect(() => {
     if (selectedServiceId) {
@@ -60,14 +64,14 @@ export default function Signup() {
 
     setIsLoading(true);
     try {
-      // await signup({
-      //   ...values,
-      //   location: locationDetails,
-      //   serviceOffered: {
-      //     description: "This is my little description about my service",
-      //     serviceId: selectedServiceId,
-      //   },
-      // });
+      await signup({
+        ...values,
+        location: locationDetails,
+        serviceOffered: {
+          description: "This is my little description about my service",
+          serviceId: selectedServiceId,
+        },
+      });
       Alert.alert("Success", "You have successfully signed up", [
         {
           text: "OK",
@@ -223,7 +227,7 @@ export default function Signup() {
                   </View>
 
                   <View style={styles.inputContainer}>
-                    {/* <ServiceDropDownPicker
+                    <ServiceDropDownPicker
                       {...{
                         services,
                         label: "Service",
@@ -231,7 +235,7 @@ export default function Signup() {
                         selectedServiceId: selectedServiceId,
                         setSelectedServiceId: setSelectedServiceId,
                       }}
-                    /> */}
+                    />
                   </View>
                 </View>
 
